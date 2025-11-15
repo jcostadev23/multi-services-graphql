@@ -5,10 +5,20 @@ export default gql`
     id: ID!
     name: String!
     last_name: String!
+    products: [Product!]!
+  }
+
+  type Product {
+    id: ID!
+    name: String!
+    userId: String!
+    isNew: Boolean!
+    description: String!
   }
 
   type Query {
     users: [User!]!
+    products: [Product!]!
   }
 
   input CreateUserInput {
@@ -16,7 +26,15 @@ export default gql`
     last_name: String!
   }
 
+  input CreateProductInput {
+    userId: String!
+    name: String!
+    isNew: Boolean!
+    description: String!
+  }
+
   type Mutation {
     createUser(data: CreateUserInput!): User!
+    createProduct(data: CreateProductInput!): Product!
   }
 `;

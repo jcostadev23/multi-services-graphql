@@ -1,24 +1,18 @@
-import User from "../models/User.js";
+import user from "./users.js";
+import product from "./products.js";
 
 export default {
   Query: {
-    users: async () => {
-      return await User.find();
-    },
+    ...user.Query,
+    ...product.Query,
   },
 
   Mutation: {
-    createUser: async (
-      _: any,
-      { data }: { data: { name: string; last_name: string } }
-    ) => {
-      const response = await User.create(data);
+    ...user.Mutation,
+    ...product.Mutation,
+  },
 
-      if (!response) {
-        throw new Error("Failed to create user");
-      }
-
-      return response;
-    },
+  User: {
+    ...user.User,
   },
 };
