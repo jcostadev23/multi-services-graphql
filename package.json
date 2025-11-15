@@ -1,0 +1,26 @@
+{
+  "name": "multi-services-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --loader ts-node/esm src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "JCostaDev23",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "apollo-server": "^3.13.0",
+    "dotenv": "^17.2.3",
+    "graphql": "^16.12.0",
+    "mongoose": "^8.19.4"
+  },
+  "type": "module"
+}
