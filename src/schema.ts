@@ -10,4 +10,13 @@ export default gql`
   type Query {
     users: [User!]!
   }
+
+  input CreateUserInput {
+    name: String!
+    last_name: String!
+  }
+
+  type Mutation {
+    createUser(data: CreateUserInput!): User!
+  }
 `;
